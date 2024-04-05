@@ -1,0 +1,14 @@
+li = [11, 21, 31, 41, 31, 21]
+dic={}
+
+for i in li:
+    if i in dic:
+        dic[i] = dic[i]+1
+    else:
+        dic[i] = 1
+
+dup = {key:val for key,val in dic.items() if val>1}
+print(dup)
+
+output:
+{21: 2, 31: 2}
