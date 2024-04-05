@@ -6,6 +6,9 @@ def num():
 for i in num():
     print(i)
 
+
+
+
 output:
 1
 2
