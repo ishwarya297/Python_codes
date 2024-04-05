@@ -1,0 +1,14 @@
+height=[1,2,1,3,3,4,3]
+hh = sorted(height)
+count=0
+print(list(zip(height,hh)))
+for i in list(zip(height,hh)):
+    if i[0]!=i[1]:
+        count +=1
+print('count:',count)
+
+
+
+output:
+[(1, 1), (2, 1), (1, 2), (3, 3), (3, 3), (4, 3), (3, 4)]
+count: 4
