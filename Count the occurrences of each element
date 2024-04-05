@@ -1,0 +1,21 @@
+from collections import Counter
+li = [1, 2, 3, 4, 3, 2]
+di = Counter(li)
+print(di)
+
+output:
+Counter({2: 2, 3: 2, 1: 1, 4: 1})
+
+-----------------------
+
+li = [1, 2, 3, 4, 3, 2]
+di = {}
+for i in li:
+    if i in di:
+        di[i] += 1
+    else:
+        di[i] = 1
+print(di)
+
+output:
+{1: 1, 2: 2, 3: 2, 4: 1}
