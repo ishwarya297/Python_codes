@@ -1,0 +1,27 @@
+class ListChecker:
+    def __init__(self, arr):
+        self.arr = arr
+    
+    def check(self, a):
+        found = False
+        for element in self.arr:
+            if element == a:
+                found = True
+                break
+
+        if found:
+            return f"{a} is present in the list."
+        else:
+            return f"{a} is not present in the list."
+
+# Get input from the user
+arr_input = input("Enter the list of numbers separated by spaces: ")
+arr_nu = list(map(int, arr_input.split()))
+print(arr_input)
+
+inp = int(input("Enter the number to check: "))
+
+# Use the ListChecker class to check if the number is present in the list
+checker = ListChecker(arr_nu)
+result = checker.check(inp)
+print(result)
