@@ -1,0 +1,35 @@
+mat1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+mat2 = [[3, 3, 3], [2, 2, 2], [4, 4, 4]]
+
+# Using nested list comprehension
+result = [[mat1[i][j] + mat2[i][j] for j in range(len(mat1[i]))] for i in range(len(mat1))]
+
+# Flatten the result to make it a single list
+output = [element for row in result for element in row]
+
+# Output: [4, 5, 6, 6, 7, 8, 11, 12, 13]
+print(output)
+
+output:
+
+[4, 5, 6, 6, 7, 8, 11, 12, 13]
+
+----------------------------------------------------
+
+import numpy as np
+
+mat1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+mat2 = [[3, 3, 3], [2, 2, 2], [4, 4, 4]]
+
+mat1_1 = np.array(mat1)
+mat2_2 = np.array(mat2)
+
+mat_array = mat1_1 + mat2_2
+
+output = mat_array.flatten().tolist()
+
+print(output)
+
+output:
+
+[4, 5, 6, 6, 7, 8, 11, 12, 13]
