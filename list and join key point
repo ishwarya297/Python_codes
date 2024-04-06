@@ -1,0 +1,8 @@
+inp = 'babad is'
+inp_lis =list(inp)
+print(inp_lis)
+ii = inp.split()
+print(ii)
+
+['b', 'a', 'b', 'a', 'd', ' ', 'i', 's']
+['babad', 'is']
