@@ -1,0 +1,27 @@
+import time
+
+st=time.time()
+
+def missing(self):
+    length = lis[-1]
+    lis_2 = []
+    for i in range(lis[0],length+1):
+        if i in lis:
+            pass
+        else:
+            lis_2.append(i)
+    print('lis_2:',lis_2)
+    ed = time.time()
+    
+    ttime = ed - st
+    print(ttime)
+        
+lis = [1,2,3,4,5,7,8,11,14]
+obj = missing(lis)
+
+
+  
+output:
+
+lis_2: [6, 9, 10, 12, 13]
+6.651878356933594e-05
