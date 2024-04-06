@@ -1,0 +1,39 @@
+class A:
+    cls_ins = 'a'  # Class-level variable
+    
+    def __init__(self, a, b):
+        self.a = a  # Instance variable
+        self.b = b  # Instance variable
+        
+    def next_fn(self):
+        print('this is next fn')
+    
+    @classmethod
+    def ne(cls):
+        cls.cls_ins = 'B'
+        print(cls.cls_ins)
+        return cls
+    
+    @staticmethod
+    def st():
+        cls_ins = 'V'
+        print(cls_ins)
+
+# Accessing class-level variable
+print(A.cls_ins)  # Output: a
+
+# Creating an instance of class A
+obj = A(5, 6)
+
+# Accessing instance variables
+print(obj.a)  # Output: 5
+print(obj.b)  # Output: 6
+
+# Calling instance method
+obj.next_fn()  # Output: this is next fn
+
+# Calling class method
+A.ne()  # Output: B
+
+# Calling static method
+A.st()  # Output: V
