@@ -26,3 +26,21 @@ def longest_consecutive_subset(inp):
 inp = [1, 2, 55, 56, 56, 57, 58]
 longest_subset = longest_consecutive_subset(inp)
 print("Longest consecutive subset:", longest_subset)
+
+
+
+output:
+
+[1, 2, 55, 56, 57, 58]
+2 *********
+1 --------------
+55 *********
+2 --------------
+!!!!!!!! 55
+56 *********
+55 --------------
+57 *********
+56 --------------
+58 *********
+57 --------------
+Longest consecutive subset: [55, 56, 57, 58]
