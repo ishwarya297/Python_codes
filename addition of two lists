@@ -1,0 +1,19 @@
+array1 = [1,2,3]
+array2 = [4,5,6]
+add_res = list(zip(array1,array2))
+print('---------',add_res)
+new_lis=[]
+for i in add_res:
+    new_lis.append(i[0]+i[1])
+    print('III----------',sum((i[0],i[1])))
+print(new_lis)
+
+
+
+output:
+
+--------- [(1, 4), (2, 5), (3, 6)]
+III---------- 5
+III---------- 7
+III---------- 9
+[5, 7, 9]
