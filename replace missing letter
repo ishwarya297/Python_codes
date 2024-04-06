@@ -1,0 +1,10 @@
+string = “D t C mpBl ckFrid yS le”
+lis = string.split()
+
+result = 'a'.join(lis)
+print(result)
+
+
+
+output:
+DataCampBlackFridaySale
