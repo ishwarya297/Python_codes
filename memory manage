@@ -1,0 +1,41 @@
+from memory_profiler import profile
+
+@profile
+def my_function():
+    # Code to profile
+
+my_function()
+
+By using memory profiling tools, you can gain insights into your code’s memory usage and make necessary optimizations to improve performance.
+
+--------------------------
+
+monitor memory usage
+
+import sys
+
+# Monitor memory usage
+object_size = sys.getsizeof(my_object)
+
+
+---------------------------
+
+manually trigger garbage collector
+
+import gc
+
+# Trigger garbage collection
+gc.collect()
+
+----------------
+
+the extend method is used to add elements to the my_list object directly, avoiding the creation of a new list.
+
+my_list = [1, 2, 3]
+my_list.extend([4, 5, 6])
+
+numbers = [1, 2, 3]  # Memory allocated for [1, 2, 3]
+numbers.append(4)  # Memory reallocated for [1, 2, 3, 4]
+
+student = {'name': 'John', 'age': 20}  # Memory allocated for {'name': 'John', 'age': 20}
+student['grade'] = 'A'  # Memory reallocated for {'name': 'John', 'age': 20, 'grade': 'A'}
