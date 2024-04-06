@@ -1,0 +1,11 @@
+input_ = [2,1,4,8,6,5]
+input_.sort()
+for i in range(1, input_[-1]-1):
+	if i in input_:
+		pass
+	else:
+		print('the missing element is:',i)
+
+
+output:
+the missing element is: 3
