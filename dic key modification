@@ -1,0 +1,11 @@
+emp_dict = {'name':'ramesh', 'salary': 20000}
+
+def increment(dictionary):
+    dictionary['salary'] = dictionary['salary'] + 3000
+
+increment(emp_dict)  # Call the function to increment the salary
+print(emp_dict)      # Print the modified dictionary
+
+
+output:
+{'name': 'ramesh', 'salary': 23000}
