@@ -1,0 +1,17 @@
+stg = 'ishwarya'
+st = stg[::-1]
+print(st)
+
+output:
+ayrawhsi
+
+--------------------
+
+lis = [1, 2, 'ishwarya']
+
+lis_revers = lis[::-1]
+print(lis_revers)
+
+output:
+
+['ishwarya', 2, 1]
