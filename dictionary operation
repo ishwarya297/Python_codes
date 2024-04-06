@@ -1,0 +1,64 @@
+dic = {
+    "records": [
+        {
+            "emp_name": "A",
+            "city": "DEL",
+            "is_manager": False
+        },
+        {
+            "emp_name": "B",
+            "city": "CHN",
+            "is_manager": True
+        },
+        {
+            "emp_name": "C",
+            "city": "MUB",
+            "is_manager": False
+        },
+        {
+            "emp_name": "D",
+            "city": "DEL",
+            "is_manager": True
+        },
+    ]
+}
+
+dic_o = {
+    "emp_city": {},
+    "manager_count": 0,
+    "total_emp_count": len(dic["records"])
+}
+
+# Count employee cities and managers
+for record in dic["records"]:
+    city = record["city"]
+    print('_______',dic_o["emp_city"])
+    ci = dic_o["emp_city"].get(city, 0)
+    print('============',city, '-----------', ci)
+    print('*******',dic_o["emp_city"].get(city, 0) + 1)
+    dic_o["emp_city"][city] = dic_o["emp_city"].get(city, 0) + 1
+    if record["is_manager"]:
+        dic_o["manager_count"] += 1
+
+print(dic_o)
+
+
+  
+
+output:
+
+_______ {}
+============ DEL ----------- 0
+******* 1
+_______ {'DEL': 1}
+============ CHN ----------- 0
+******* 1
+_______ {'DEL': 1, 'CHN': 1}
+============ MUB ----------- 0
+******* 1
+_______ {'DEL': 1, 'CHN': 1, 'MUB': 1}
+============ DEL ----------- 1
+******* 2
+{'emp_city': {'DEL': 2, 'CHN': 1, 'MUB': 1}, 'manager_count': 2, 'total_emp_count': 4}
+
+=== Code Execution Successful ===
