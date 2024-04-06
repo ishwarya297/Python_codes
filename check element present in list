@@ -1,0 +1,17 @@
+arr = [1, 2, 3, 4, 5, 6, 7, 9]
+a = 1
+
+found = False
+for i in arr:
+    if i == a:
+        found = True
+        break
+    
+if found:
+    print(f"{a} element is present")
+else:
+    print(f"{a} element is not present")
+
+
+output:
+1 element is present
