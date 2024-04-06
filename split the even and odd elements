@@ -1,0 +1,17 @@
+def fn(lis_fn):
+    li_2 = []
+    print(':::::',lis_fn[:])
+    for i in lis_fn[:]:  # Iterate over a copy of the original list
+        if i % 2 == 0:
+            li_2.append(i)
+            lis_fn.remove(i)
+    return li_2, lis_fn
+
+li = [1, 2, 3, 4, 8, 3]
+print(fn(li))
+
+
+
+output:
+::::: [1, 2, 3, 4, 8, 3]
+([2, 4, 8], [1, 3, 3])
