@@ -1,0 +1,25 @@
+Write a Python function to group the words into sets of anagrams. Anagrams are words that have the same characters but in a different order.
+
+words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+dic={}
+lis=[]
+for i in words:
+    j = sorted(i)
+    j_ = ''.join(j)
+    print('-----------',j_)
+    if j_ in dic:
+        dic[j_].add(i)
+    else:
+        dic[j_] = {i}
+# print(dic)
+print([v for k,v in dic.items()])
+
+
+output:
+----------- aet
+----------- aet
+----------- ant
+----------- aet
+----------- ant
+----------- abt
+[{'ate', 'tea', 'eat'}, {'tan', 'nat'}, {'bat'}]
