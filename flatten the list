@@ -1,0 +1,16 @@
+def rec_fn(lis, lis_1):
+    for i in lis:
+        if isinstance(i, int):
+            lis_1.append(i)
+        elif isinstance(i, list):
+            rec_fn(i, lis_1)
+    return lis_1
+
+lis = [1, 2, 3, [4, 5, 6, 1, [6, 9]]]
+result_list = rec_fn(lis, [])
+print(result_list)
+
+
+
+output:
+[1, 2, 3, 4, 5, 6, 1, 6, 9]
