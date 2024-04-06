@@ -1,0 +1,36 @@
+import requests
+import csv
+from io import StringIO
+def fetch_nifty50_data():
+    # URL of the CSV file
+    csv_url = "https://nsearchives.nseindia.com/content/indices/ind_nifty50list.csv"
+
+    # Fetching the CSV content
+    response = requests.get(csv_url)
+
+    if response.status_code == 200:
+        # Parsing CSV content
+        csv_content = StringIO(response.text)
+        csv_reader = csv.DictReader(csv_content)
+        nifty50_data = list(csv_reader)
+        return nifty50_data
+    else:
+        print("Failed to fetch data from the URL:", csv_url)
+        return None
+
+def get_company_data(symbol):
+    nifty50_data = fetch_nifty50_data()
+    if nifty50_data:
+        # Searching for the company data by symbol
+        for company in nifty50_data:
+            if company['Symbol'] == symbol.upper():
+                return company
+        return {"error": "Company not found"}
+    else:
+        return {"error": "Failed to fetch Nifty 50 data"}
+
+if __name__ == "__main__":
+    # Example usage
+    symbol = "TCS"  # Replace with any desired company symbol
+    company_data = get_company_data(symbol)
+    print(company_data)
