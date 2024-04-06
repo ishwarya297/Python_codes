@@ -1,0 +1,25 @@
+Find the Longest Palindromic Substring
+Given a string, find the longest palindromic substring within it. You may assume that the maximum length of the string is 1000.
+ 
+For example:
+Input: "babad"
+Output: "bab" or "aba" (either one is acceptable)
+ 
+Input: "cbbd"
+Output: "bb"
+
+inp = 'babad'
+rev = list(inp[::-1])
+inp_lis =list(inp)
+join_lis = list(zip(inp_lis, rev))
+# print(join_lis)
+new_lis=[]
+for i in join_lis:
+    # print(i)
+    if i[0] == i[1]:
+        # print('_',i)
+        new_lis.append(i[0])
+print(''.join(new_lis))
+
+output:
+aba
