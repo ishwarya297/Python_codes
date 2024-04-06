@@ -1,0 +1,26 @@
+def max_product(arr):
+    if len(arr) < 2:
+        return None
+    
+    # Sort the array
+    arr.sort()
+    print('____________arr',arr)
+    
+    # If all numbers are non-positive or all non-negative
+    if arr[-1] <= 0 or arr[0] >= 0:
+        print('------------')
+        return arr[-1] * arr[-2]
+    else:
+        # Return the maximum product of the two largest numbers
+        print('******',arr[-1] * arr[-2], arr[0] * arr[1])
+        return max(arr[-1] * arr[-2], arr[0] * arr[1])
+
+# Example usage
+arr = [6, -2, 38, 4, 6, -6]
+print("Maximum product of any two distinct numbers:", max_product(arr))
+
+
+output:
+____________arr [-6, -2, 4, 6, 6, 38]
+****** 228 12
+Maximum product of any two distinct numbers: 228
