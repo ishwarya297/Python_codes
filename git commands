@@ -1,0 +1,10 @@
+git clone
+git pull
+git checkout -b ish
+do changes
+git status
+git add .
+git commit -m ""
+git push origin ish
+git checkout master
+git branch -d ish
