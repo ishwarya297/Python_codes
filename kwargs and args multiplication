@@ -1,0 +1,30 @@
+def arg_fn(**kwargs):
+    print('______',kwargs)
+    result = 1
+    for arg in kwargs.values():
+        result *= arg
+    return result
+di = {'a':5,'c':4,'g':9}      
+print(arg_fn(**di))
+
+
+output:
+______ {'a': 5, 'c': 4, 'g': 9}
+180
+
+-----------------------
+
+def arg_fn(*args):
+    print('______', args)
+    result = 1
+    for arg in args:
+        result *= arg
+    return result
+
+lis = [1, 2, 3, 5]       
+print(arg_fn(*lis))
+
+
+output:
+______ (1, 2, 3, 5)
+30
