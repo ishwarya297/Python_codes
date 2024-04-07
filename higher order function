@@ -1,4 +1,4 @@
-Higher order function are functions that "takes functions as a parameter or returns a function as a result".
+Higher order function are functions that "takes functions as a parameter or returns a function as a result". We can say decorator as HOF
 
 
 # Example of a higher-order function: map
@@ -26,3 +26,25 @@ The map() function is a higher-order function because it takes the double() func
 The double() function is a simple function that takes a number and returns its double.
 The map() function applies the double() function to each element of the numbers list, returning an iterator containing the doubled values.
 We convert the iterator to a list using list() to get the final result.
+
+------------------
+
+example 2:
+
+# Python program to illustrate functions 
+# can be passed as arguments to other functions 
+def shout(text): 
+	return text.upper() 
+	
+def whisper(text): 
+	return text.lower() 
+	
+def greet(func): 
+	# storing the function in a variable 
+	greeting = func("Hi, I am created by a function \ 
+	passed as an argument.") 
+	print(greeting) 
+	
+greet(shout) 
+greet(whisper) 
+
