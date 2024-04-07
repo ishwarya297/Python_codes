@@ -1,0 +1,56 @@
+class MyClass:
+    class_attribute = 10
+    
+    @classmethod
+    def modify_class_attribute(cls, new_value):
+        cls.class_attribute = new_value
+
+# Create instances of MyClass
+obj1 = MyClass()
+obj2 = MyClass()
+
+print(obj1.class_attribute)  # Output: 10
+print(obj2.class_attribute)  # Output: 10
+
+MyClass.modify_class_attribute(20)  # Modify the class attribute using the class method
+
+print(obj1.class_attribute)  # Output: 20 (change reflected in obj1)
+print(obj2.class_attribute)  # Output: 20 (change reflected in obj2)
+
+explanation:
+
+Yes, if you use @classmethod to modify a class attribute, the change will be reflected across all instances of that class throughout the program.
+
+Here's a brief explanation of how @classmethod works in Python:
+
+A @classmethod is a method that is bound to the class rather than an instance of the class.
+It receives the class itself as its first argument, conventionally named cls, instead of the instance (self).
+@classmethod is often used to modify class attributes or perform operations that involve the class itself rather than individual instances.
+When you modify a class attribute within a @classmethod, the change affects all instances of that class. This is because class attributes are shared among all instances of the class.
+
+In this example, after modifying the class_attribute using the modify_class_attribute class method, the change is reflected in both obj1 and obj2. This demonstrates that modifications to class attributes affect all instances of the class.
+
+-----------------------------------------------
+
+class MyClass:
+    class_attribute = 10
+    
+    @staticmethod
+    def modify_class_attribute(new_value):
+        MyClass.class_attribute = new_value
+
+# Print the initial value of class_attribute
+print(MyClass.class_attribute)  # Output: 10
+
+# Call the static method to modify class_attribute
+MyClass.modify_class_attribute(20)
+
+# Print the modified value of class_attribute
+print(MyClass.class_attribute)  # Output: 20
+
+
+Yes, you can modify class attributes inside a @staticmethod. However, since static methods do not have access to the instance or the class itself (self or cls), you need to reference the class name directly to modify the class attribute.
+
+Here's an example demonstrating how to modify a class attribute inside a @staticmethod:
+
+In this example, modify_class_attribute() is a static method defined within the MyClass class. It modifies the class_attribute by directly referencing the class name MyClass. After calling the static method, the value of class_attribute is modified to 20.
