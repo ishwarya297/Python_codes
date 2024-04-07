@@ -1,0 +1,28 @@
+Higher order function are functions that "takes functions as a parameter or returns a function as a result".
+
+
+# Example of a higher-order function: map
+# The map function applies a given function to each item of an iterable (like a list) and returns a new iterator that yields the results.
+# Syntax: map(function, iterable)
+
+# Define a function to double a number
+def double(x):
+    return x * 2
+
+# Define a list of numbers
+numbers = [1, 2, 3, 4, 5]
+
+# Use the map function to double each number in the list
+doubled_numbers = map(double, numbers)
+
+# Convert the result to a list
+doubled_numbers_list = list(doubled_numbers)
+
+# Print the result
+print(doubled_numbers_list)  # Output: [2, 4, 6, 8, 10]
+
+
+The map() function is a higher-order function because it takes the double() function as an argument.
+The double() function is a simple function that takes a number and returns its double.
+The map() function applies the double() function to each element of the numbers list, returning an iterator containing the doubled values.
+We convert the iterator to a list using list() to get the final result.
