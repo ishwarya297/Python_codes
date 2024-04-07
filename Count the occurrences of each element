@@ -19,3 +19,14 @@ print(di)
 
 output:
 {1: 1, 2: 2, 3: 2, 4: 1}
+
+
+------------------
+
+li = [1, 2, 3, 4, 3, 2]
+di = {i: li.count(i) for i in li}
+print(di)
+
+
+output:
+{1: 1, 2: 2, 3: 2, 4: 1}
