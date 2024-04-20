@@ -1,0 +1,70 @@
+def find_extremes(lst):
+    # Initialize variables to store the extremes
+    first_max = lst[0]
+    print('OOOOOOOOO',first_max)
+    second_max = None
+    first_min = lst[0]
+    print('????????',first_min)
+    second_min = None
+    
+    # Iterate through the list to find the extremes
+    for num in lst[1:]:
+        print('______',num)
+        # Update maximums
+        if num > first_max:
+            second_max = first_max
+            first_max = num
+            print('>>>>>first_max',first_max)
+        elif second_max is None or num > second_max:
+            second_max = num
+            print('????second_max',second_max)
+        
+        # Update minimums
+        if num < first_min:
+            second_min = first_min
+            print('HHHHHHHsecond_min',second_min)
+            first_min = num
+            print('HHHHHHfirst_min',first_min)
+        elif second_min is None or num < second_min:
+            second_min = num
+            print('GGGGGGGGGGsecond_min',second_min)
+    
+    return first_max, second_max, first_min, second_min
+
+# Test with the given list
+l = [11, 2, 3, 4, 5, 6, 7, 8]
+first_max, second_max, first_min, second_min = find_extremes(l)
+
+print("First maximum:", first_max)
+print("Second maximum:", second_max)
+print("First minimum:", first_min)
+print("Second minimum:", second_min)
+
+
+output:
+
+OOOOOOOOO 11
+???????? 11
+______ 2
+????second_max 2
+HHHHHHHsecond_min 11
+HHHHHHfirst_min 2
+______ 3
+????second_max 3
+GGGGGGGGGGsecond_min 3
+______ 4
+????second_max 4
+______ 5
+????second_max 5
+______ 6
+????second_max 6
+______ 7
+????second_max 7
+______ 8
+????second_max 8
+First maximum: 11
+Second maximum: 8
+First minimum: 2
+Second minimum: 3
+
+=== Code Execution Successful ===
