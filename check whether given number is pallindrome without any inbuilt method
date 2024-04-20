@@ -1,0 +1,63 @@
+def is_palindrome(number):
+    # Count the number of digits
+    num_of_digits = 0
+    temp = number
+    # print(';;;;;',temp)
+    while temp > 0:
+        num_of_digits += 1
+        print('?',num_of_digits)
+        temp //= 10
+        print('>>>>',temp)
+    
+    # Compare digits from both ends
+    temp = number
+    print(num_of_digits // 2,'ppppppp')
+    for _ in range(num_of_digits // 2):
+        last_digit = temp % 10
+        print('::::::::',last_digit)
+        first_digit = temp // (10 ** (num_of_digits - 1))
+        print('LLLLL',first_digit)
+        if first_digit != last_digit:
+            return False
+        # Remove first and last digits
+        temp %= 10 ** (num_of_digits - 1)
+        print('MMMMMMMMM',temp)
+        temp //= 10
+        print('HHHHHHH',temp)
+        num_of_digits -= 2
+        print('<<<<<<<<',num_of_digits)
+    return True
+
+# Test with the number 121
+number = 31213
+if is_palindrome(number):
+    print(number, "is a palindrome.")
+else:
+    print(number, "is not a palindrome.")
+
+
+output:
+? 1
+>> 3121
+? 2
+>> 312
+? 3
+>> 31
+? 4
+>> 3
+? 5
+>> 0
+2 ppppppp
+:::::::: 3
+LLLLL 3
+MMMMMMMMM 1213
+HHHHHHH 121
+<<<<<<<< 3
+:::::::: 1
+LLLLL 1
+MMMMMMMMM 21
+HHHHHHH 2
+<<<<<<<< 1
+31213 is a palindrome.
+
+=== Code Execution Successful ===
