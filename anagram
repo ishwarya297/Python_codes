@@ -2,7 +2,6 @@ Write a Python function to group the words into sets of anagrams. Anagrams are w
 
 words = ["eat", "tea", "tan", "ate", "nat", "bat"]
 dic={}
-lis=[]
 for i in words:
     j = sorted(i)
     j_ = ''.join(j)
