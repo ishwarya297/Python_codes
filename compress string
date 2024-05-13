@@ -1,0 +1,23 @@
+def compress_string(s):
+    compressed = ""
+    count = 1
+    
+    for i in range(1, len(s)):
+        if s[i] == s[i - 1]:
+            count += 1
+        else:
+            compressed += str(count) + s[i - 1]
+            count = 1
+    
+    compressed += str(count) + s[-1]
+    return compressed
+
+input_string = "ccaaaaabbcdddffaayyh"
+compressed_string = compress_string(input_string)
+print(compressed_string)  # Output: 2c5a2bc3d2f2a2yh
+
+
+
+output :
+
+2c5a2b1c3d2f2a2y1h
