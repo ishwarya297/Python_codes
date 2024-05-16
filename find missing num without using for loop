@@ -11,3 +11,10 @@ print('!!!!!!!!!!!',val)
 missing_num = expect - val
 
 print('missing_num:',missing_num)
+
+
+output:
+
+>>> 21
+!!!!!!!!!!! 17
+missing_num: 4
