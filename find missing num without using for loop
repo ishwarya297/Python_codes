@@ -1,0 +1,13 @@
+li = [1,2,3,5,6]
+
+len_ = len(li) +1
+
+expect = len_ * (len_ +1) //2 
+print('>>>>>>>>>',expect)
+
+val = sum(li)
+print('!!!!!!!!!!!',val)
+
+missing_num = expect - val
+
+print('missing_num:',missing_num)
