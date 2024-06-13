@@ -61,3 +61,26 @@ HHHHHHH 2
 31213 is a palindrome.
 
 === Code Execution Successful ===
+
+
+def is_palindrome(number):
+    # Count the number of digits
+    num_of_digits = 0
+    temp = number
+    while temp > 0:
+        num_of_digits += 1
+        temp //= 10
+    
+    # Compare digits from both ends
+    temp = number
+    for _ in range(num_of_digits // 2):
+        last_digit = temp % 10
+        first_digit = temp // (10 ** (num_of_digits - 1))
+        if first_digit != last_digit:
+            return False
+        # Remove first and last digits
+        temp %= 10 ** (num_of_digits - 1)
+        temp //= 10
+        num_of_digits -= 2
+    
+    return True
