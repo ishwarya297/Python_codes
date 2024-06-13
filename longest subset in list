@@ -40,6 +40,32 @@ output:
 56 *********
 55 --------------
 57 *********
+
+
+
+
+def longest_consecutive_subset(inp):
+    # Remove duplicates from the input list and sort it
+    inp_set = sorted(set(inp))
+    print(inp_set)
+    longest_subset = []
+    current_subset = [inp_set[0]]
+    n = len(inp_set)
+
+    for i in range(1, n):
+        if inp_set[i] == inp_set[i-1] + 1:
+            current_subset.append(inp_set[i])
+        else:
+            if len(current_subset) > len(longest_subset):
+                longest_subset = current_subset.copy()
+            current_subset = [inp_set[i]]
+
+    # Check if the current subset at the end is longer than the previous longest subset
+    if len(current_subset) > len(longest_subset):
+        longest_subset = current_subset
+
+    return longest_subset
+
 56 --------------
 58 *********
 57 --------------
