@@ -1,0 +1,34 @@
+def transform_string(input_string):
+    output = []
+    i = 0
+    
+    while i < len(input_string):
+        # Count the number of consecutive occurrences of the current character
+        count = 1
+        while i + 1 < len(input_string) and input_string[i] == input_string[i + 1]:
+            count += 1
+            i += 1
+        
+        # Append the character and the count (if greater than 1) to the output list
+        if count > 1:
+            output.append(f"{input_string[i]}{count}")
+            print('-----------',output)
+        else:
+            output.append(input_string[i])
+        
+        i += 1
+    
+    # Join the list into a string and return it
+    return ''.join(output)
+
+input_string = "abb24cccdeef"
+output_string = transform_string(input_string)
+print(output_string)
+
+
+output:
+
+----------- ['a', 'b2']
+----------- ['a', 'b2', '2', '4', 'c3']
+----------- ['a', 'b2', '2', '4', 'c3', 'd', 'e2']
+ab224c3de2f
