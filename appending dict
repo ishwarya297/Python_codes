@@ -1,0 +1,17 @@
+# Initial data
+tup = (['headset', 20], ['phone', 10], ['laptop', 30])
+dic = {'laptop': 10, 'phone': 90}
+
+# Iterate through the tuple and update the dictionary
+for key, value in tup:
+    if key in dic:
+        dic[key] += value
+    else:
+        dic[key] = value
+
+print(dic)
+
+
+output:
+
+{'laptop': 40, 'phone': 100, 'headset': 20}
