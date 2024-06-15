@@ -1,0 +1,60 @@
+input_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+# Separate the elements at even and odd indices
+even_indexed_elements = [input_tuple[i] for i in range(len(input_tuple)) if i % 2 == 1]
+odd_indexed_elements = [input_tuple[i] for i in range(len(input_tuple)) if i % 2 == 0]
+
+# Reverse the odd indexed elements
+odd_indexed_elements.reverse()
+
+# Merge back the elements to form the output tuple
+output_list = []
+odd_index = 0
+even_index = 0
+
+for i in range(len(input_tuple)):
+    print('**************',i)
+    if i % 2 == 0:
+        print(':::::::::',i)
+        output_list.append(odd_indexed_elements[odd_index])
+        print('output_list',output_list)
+        odd_index += 1
+    else:
+        output_list.append(even_indexed_elements[even_index])
+        print('output_list',output_list)
+        even_index += 1
+
+output_tuple = tuple(output_list)
+
+print(output_tuple)
+
+
+
+output:
+
+************** 0
+::::::::: 0
+output_list [9]
+************** 1
+output_list [9, 2]
+************** 2
+::::::::: 2
+output_list [9, 2, 7]
+************** 3
+output_list [9, 2, 7, 4]
+************** 4
+::::::::: 4
+output_list [9, 2, 7, 4, 5]
+************** 5
+output_list [9, 2, 7, 4, 5, 6]
+************** 6
+::::::::: 6
+output_list [9, 2, 7, 4, 5, 6, 3]
+************** 7
+output_list [9, 2, 7, 4, 5, 6, 3, 8]
+************** 8
+::::::::: 8
+output_list [9, 2, 7, 4, 5, 6, 3, 8, 1]
+(9, 2, 7, 4, 5, 6, 3, 8, 1)
+
+=== Code Execution Successful ===
