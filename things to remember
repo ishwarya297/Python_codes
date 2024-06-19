@@ -1,0 +1,1 @@
+count_lorem = input_string.lower().count('lorem')  # count the "lorem" word in a string
