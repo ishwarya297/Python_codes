@@ -1,0 +1,54 @@
+inp = [1,2,[2,3],4,5,[5,6]]
+out = [1,2,3,4,5,6]
+
+---------------------------------------
+# Define the input list
+inp = [1, 2, [2, 3], 4, 5, [5, 6]]
+
+# Initialize the output list
+out = []
+
+# Iterate through each element in the input list
+for element in inp:
+    if isinstance(element, list):
+        # If the element is a list, extend the output list with its contents
+        out.extend(element)
+    else:
+        # If the element is not a list, append it to the output list
+        out.append(element)
+
+# Print the result
+print(out)
+
+output:
+
+[1, 2, 2, 3, 4, 5, 5, 6]
+
+-------------------------------------
+
+# Define the input list
+inp = [1, 2, [2, 3], 4, 5, [5, 6]]
+
+# Initialize the output list
+out = []
+
+# Flatten the list
+for element in inp:
+    if isinstance(element, list):
+        out.extend(element)
+    else:
+        out.append(element)
+
+# Remove duplicates by converting to a set and then back to a list
+out = list(set(out))
+
+# Sort the list to maintain order
+out.sort()
+
+# Print the result
+print(out)
+
+
+output:
+
+[1, 2, 3, 4, 5, 6]
