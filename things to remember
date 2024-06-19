@@ -1,1 +1,48 @@
 count_lorem = input_string.lower().count('lorem')  # count the "lorem" word in a string
+
+--------------------------------------
+
+The map function applies a given function to each item in a collection (like a list) and returns a new collection with the results. It essentially transforms each element of the original collection according to the function provided.
+
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, numbers))
+# squared will be [1, 4, 9, 16, 25]
+
+---------------------------------------
+
+The reduce function (in Python, typically found in the functools module) applies a rolling computation to sequential pairs of elements in a collection, ultimately reducing them to a single value.
+
+from functools import reduce
+numbers = [1, 2, 3, 4, 5]
+product = reduce(lambda x, y: x * y, numbers)
+# product will be 120 (1 * 2 * 3 * 4 * 5)
+
+-----------------------------------------
+
+The filter function creates a new collection containing only the elements of the original collection that satisfy a certain condition, specified by a predicate function.
+
+numbers = [1, 2, 3, 4, 5]
+evens = list(filter(lambda x: x % 2 == 0, numbers))
+# evens will be [2, 4]
+
+----------------------
+
+Generates a random integer between specified inclusive bounds.
+
+import random
+
+# Generate a random integer between 1 and 10 (inclusive)
+random_number = random.randint(1, 10)
+print(random_number)
+
+-----------------------
+
+Selects a random element from a non-empty sequence.
+
+import random
+
+# Select a random element from a list
+my_list = [1, 2, 3, 4, 5]
+random_element = random.choice(my_list)
+print(random_element)
+
