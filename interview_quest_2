@@ -1,0 +1,72 @@
+headers--> accept and content type
+
+lis_dep=[{'ece':{'A':18,'B':19}},{'cs':{'C':18,'D':19}}]
+lis_stu=[{'A':18},{'B':19},{'C':18},{'D':19}]
+lis_out_put = []
+di={}
+
+update_web = post(url, headers={'accept':, 'accept'}, data = lis_dep)
+
+----------------------
+
+lis_dep=[{'ece':{'A':18,'B':19}},{'cs':{'C':18,'D':19}}]
+lis_stu=[{'A':18},{'B':19},{'C':18},{'D':19}]
+lis_out_put = []
+di={}
+
+for i in lis_dep:
+    
+    for h,j in i.items():
+        print(h)
+        
+        for k in j.items():
+            # print(k)
+            if k[1]>18:
+                # print(i.keys(),'===========',k)
+                di[h] = k
+print(di)
+
+---------------------
+
+college
+
+dep
+
+students
+
+select c.student_name, c.dep_id from college c join dep d join students s on c.college_id = d.college_dep_id and d.college_student_name = s.students_name
+ where s.student_age>18
+
+
+-----------------------
+
+lis = [8,4,1,9]
+
+max_nu = max(lis)
+
+def fn()
+for i, val in enumerate(lis):
+    if val == max_num
+    return i
+
+--------------------
+
+[1,2,3,4,5,6,7,8,9,10]
+
+
+# val = lis.join().slice(0,10,3)
+
+print(lis.join())
+
+-----------------
+
+from collections import Counter
+lis1 = [1,2,3,4,5]
+lis2 = [6,7,1,2]
+
+lis1.extend(lis2)
+
+occurance = Counter(lis1)
+
+dup = [i_val for i_key,i_val in occurance.items()]
+print(set(list(dup)
